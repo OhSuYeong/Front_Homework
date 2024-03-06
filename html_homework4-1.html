@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        //literal(리터럴)-보이는 그대로(의미해석X)
+
+        const show = function(){
+            let f ='show....';
+            console.log(f);
+            return (function(){
+            return f+':inner function';
+            });
+        };
+
+        //console.log(show);
+        const revalue=show();
+        console.log(revalue());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

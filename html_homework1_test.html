@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 90%;
+            margin: 0 auto;
+            display: flex; /* flex container로 변경 */
+            flex-wrap: wrap; /* 요소들이 창 크기에 맞게 줄바꿈되도록 설정 */
+        }
+        header {
+            width: 100%;
+            height: 120px;
+            background-color: rgb(255, 255, 0);
+            border-bottom: solid 2px black;
+        }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 5em;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        div#section {
+            width: 100%;
+            text-align: center;
+        }
+        footer {
+            width: 100%;
+            height: 110px;
+            background-color: rgba(195, 195, 195, 0.33);
+            padding: 20px;
+            box-sizing: border-box; /* padding이 width에 포함되도록 설정 */
+        }
+    </style>
+    <style>
+    .w3-font1 {
+        font-family: "Courier New", monospace;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="w3-container w3-center w3-animate-top"><center>KAKAO CLOUD SCHOOL</center></h1>
+            <nav class="w3-container w3-center w3-animate-zoom">
+                <ul><center>
+                    <div class="w3-bar w3-yellow">
+                        <button class="w3-bar-item w3-button" onclick="openCity('Home')">Home</button>
+                        <button class="w3-bar-item w3-button" onclick="openCity('Motivation')">Motivation</button>
+                        <button class="w3-bar-item w3-button" onclick="openCity('Class')">Class</button>
+                        <button class="w3-bar-item w3-button" onclick="openCity('Career')">Career</button>
+                        <button class="w3-bar-item w3-button" onclick="openCity('Information')">Information</button>
+                    </div>
+                </center></ul>
+            </nav>
+        </header>
+        <div id="Home" class="w3-container city" style="display:none">
+            <section class="w3-animate-zoom">
+                <h1><center>I'm OH SU YEONG</center></h1>
+            </section>
+        </div>
+        <div id="Motivation" class="w3-container city" style="display:none">
+            <section class="w3-animate-zoom">
+                <h2>Motivation 1</h2>
+                <p>The reason I became interested in cloud computing dates back to the Hanium contest organized by the Ministry of Science and ICT in 2022. The goal of the contest was to create an application called "Healthy World" that provides a food ingredient analysis service. At that time, my knowledge of app development was limited, so based on the mentor's advice, I started studying both frontend and backend development.
+
+                    I utilized open APIs from the Ministry of Food and Drug Safety to fetch data for analyzing food ingredient tables. The objective was to develop an application that filters out harmful foods and recommends healthier alternatives based on the user's consumption. To achieve this, handling vast amounts of data was essential, leading me to realize the necessity of cloud services. This sparked my interest in cloud computing.
+                    
+                    After developing an interest, I began studying cloud services and, while searching for educational programs, came across an advertisement for the Kakao Cloud School at the university library. Recognizing the rarity of such opportunities, I decided to apply. Before entering university, I thought I could self-learn C programming sufficiently. However, participating in contests and collaborating on a team for my graduation thesis made me realize the limitations of self-learning, especially in practical scenarios, through the Hanium ICT mentoring program.
+                    
+                    Therefore, I believe that the entire curriculum of the Kakao Cloud School will be immensely helpful for my goal of becoming an engineer. Among the courses, I am particularly interested in the Kakao employee mentorship and the industry-tailored project execution. This is because I think these aspects will allow me to gain insights into real development challenges and experiences that are not attainable through self-study.
+                    </p>
+            </section>
+            <section class="w3-animate-zoom">
+                <h2>Motivation 2</h2>
+                <p>I would like to introduce myself as someone who plans meticulously and consistently puts in effort. In high school, I faced the challenge of choosing a major and deciding on a career path. In university, I deliberated extensively on which field to pursue, constantly planning and revising my life goals. While not everything went according to plan, the continuous adjustments became a source of growth for me. The ability to meticulously craft plans has been a significant strength, serving as a great motivator for my hard work and driving force.
+
+                    Concrete and well-thought-out plans, rather than vague imaginations, have fueled my dedication and determination. Achieving such plans has contributed significantly to my experience. My current plan involves enhancing the skills necessary for the role I aspire to through the Kakao Cloud School and subsequently securing employment in that field. The curriculum of the Kakao Cloud School may pose challenges that make me contemplate giving up. However, my plan will serve as a pillar of support, helping me overcome any moments of doubt. To achieve this, I am determined to successfully gain admission to the Kakao Cloud School.
+                    </p>
+            </section>
+        </div>
+        <div id="Class" class="w3-container city" style="display:none">
+            <section class="w3-animate-zoom">
+                <h2>Paris</h2>
+                <p>Paris is the capital of France.</p> 
+            </section>
+          </div>
+          
+        <div id="Career" class="w3-container city" style="display:none">
+            <section class="w3-animate-zoom">
+                <h2>Tokyo</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </section>
+        </div>
+        <div id="Information" class="w3-container city" style="display:none">
+            <section class="w3-animate-zoom"></section>
+                <img src="https://placekitten.com/80/80" alt="Profile Image">
+                <h2>OSY</h2>
+                <p class="w3-font1">Cloud Engineer</p>
+                <p class="w3-font1">GitHub: <a href="https://github.com/OhSuYeong/project_kakao.git">https://github.com/OhSuYeong/project_kakao.git</a></p> 
+            </section>
+        </div>
+          <script>
+
+          function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            document.getElementById(cityName).style.display = "block";  
+          }
+          </script>
+
+        <footer>
+            <h4>사용자 정보</h4>
+            <p>wb0982@kyonggi.ac.kr</p>
+        </footer>
+    </div>
+</body>
+</html>

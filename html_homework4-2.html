@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        //literal(리터럴)-보이는 그대로(의미해석X)
+
+        const show = function(){
+            let f ='show....';
+            console.log(f);
+            return (function(){
+            return f+':inner function';
+            });
+        };
+
+        let age =16;
+        let welcome =(age<18) ?
+            () => console.log('안녕'):
+            () => console.log("안녕하세요!");
+
+        welcome();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

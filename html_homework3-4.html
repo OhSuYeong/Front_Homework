@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var jumoney = ['money','card','paper'];
+        var check = 0;
+
+        for(var v of jumoney){
+            if (v == 'money'){
+                check=1;
+                break;
+            } else {
+                continue;
+            }
+        }
+
+        if(check == 1){
+            console.log("택시타라 넌 자격이 있다.");
+        } else {
+            console.log("돈 없으면 걸어가라");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

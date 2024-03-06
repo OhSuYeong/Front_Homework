@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #bf{
+            border:solid 2px blue;
+            width: 1000px; /* Set the desired width */
+            height: 600px; /* Maintain aspect ratio */
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            let hObjList=window.document.getElementsByTagName("h1");
+            console.log(hObjList);
+
+            for(let hObj of hObjList){
+                hObj.style.backgroundColor = '#FF0000';
+                hObj.style.color='white';
+            }
+            //이미지 교체
+            let imgObj= document.querySelector('#bf');
+            console.log(bf.getAttribute("src"));
+
+            imgObj.onmouseover=function(event){
+                let imgPath='C:\\vscode\\html\\img\\bf.png';
+                imgObj.setAttribute('src',imgPath);
+            };
+            imgObj.onmouseout=function(event){
+                let imgPath='C:\\vscode\\html\\img\\1.PNG';
+                imgObj.setAttribute('src',imgPath);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div> <!--객체=속성+기능()-->
+        <h1>로그인화면</h1>
+        <img id="bf" src="C:\vscode\html\img\1.PNG" alt="정신차려">
+        <h1>여기도 되나요</h1>
+    </div>
+    
+</body>
+</html>

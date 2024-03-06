@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        class Player{
+            //속성
+            constructor(){
+                this.x=100;
+                this.y=200;
+                this.myShape='Player';
+            }
+            //메소드
+            display(){
+                console.log(`${this.myShape}=${this.x},${this.y}`);
+                //console.log(this.myShape);
+            }
+            moveLeft(){
+                this.x = this.x - 10;
+                this.display();
+            }
+            moveRight(){
+                this.x = this.x + 10;
+                this.display();
+            }
+        };  //정의문
+        class Enemy{
+            //속성
+            constructor(){
+                this.x=100;
+                this.y=200;
+                this.myShape='Enemy';
+            }
+            //메소드
+            display(){
+                console.log(`${this.myShape}=${this.x},${this.y}`);
+                //console.log(this.myShape);
+            }
+            moveLeft(){
+                this.x = this.x - 10;
+                this.display();
+            }
+            moveRight(){
+                this.x = this.x + 10;
+                this.display();
+            }
+            moveDown(){
+                this.y = this.y - 10;
+                this.display();
+            }
+            moveUp(){
+                this.y = this.y + 10;
+                this.display();
+            }
+        };  //정의문
+
+        //인스턴스 생성(실제 실행)
+        let pObj = new Player();
+        let npObj = new Enemy();
+        pObj.display();
+        pObj.moveLeft();
+        pObj.moveLeft();
+        npObj.display();
+        npObj.moveRight();
+        npObj.moveUp();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

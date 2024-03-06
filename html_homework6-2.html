@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #bf {
+            border: solid 2px blue;
+            width: 1000px; /* Set the desired width */
+            height: 600px; /* Maintain aspect ratio */
+            cursor: pointer; /* Add cursor style for better user experience */
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let hObjList = window.document.getElementsByTagName("h1");
+
+            for (let hObj of hObjList){
+                hObj.style.backgroundColor = '#FF0000';
+                hObj.style.color = 'white';
+            }
+
+            let imgObj = document.querySelector('#bf');
+            let imgPath = 'C:\\vscode\\html\\img\\bf.png';
+
+            imgObj.onmouseover = function(event){
+                imgObj.setAttribute('src', imgPath);
+            };
+
+            imgObj.onmouseout = function(event){
+                imgObj.setAttribute('src', 'C:\\vscode\\html\\img\\1.PNG');
+            };
+
+            imgObj.addEventListener('click', function() {
+                // Display image description
+                let imageDescription = document.createElement('h2');
+                imageDescription.textContent = '이미지 설명문';
+                document.body.appendChild(imageDescription);
+
+                // Remove the image description after a delay (e.g., 3 seconds)
+                setTimeout(function() {
+                    document.body.removeChild(imageDescription);
+                }, 3000);
+            });
+        };
+    </script>
+</head>
+<body>
+    <div>
+        <h1>로그인화면</h1>
+        <img id="bf" src="C:\vscode\html\img\1.PNG" alt="정신차려">
+        <h1>여기도 되나요</h1>
+    </div>
+</body>
+</html>
