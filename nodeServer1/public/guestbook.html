@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>kakao engineer visitor</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css" integrity="sha384-5QFXyVb+lrCzdN228VS3HmzpiE7ZVwLQtkt+0d9W43LQMzz4HBnnqvVxKg6O+04d" crossorigin="anonymous">
+
+    <style>
+        body {
+            width: 80%; /* 바디의 너비를 조정 */
+            margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
+        }
+    </style>
+</head>
+<body>
+    <h1><center>방문록</center></h1>
+    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/list">List</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <br>
+    <form onsubmit="return validateForm()" action="/save" method="post">
+        <fieldset>
+            <div>
+                <label for="title" class="form-label mt-4">글제목</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="제목을 작성해주세요.">
+            </div>
+
+            <div>
+              <label for="exampleInputEmail1" class="form-label mt-4">작성자 이메일</label>
+              <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="이메일을 작성해주세요.">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div>
+              <label for="content" class="form-label mt-4">글내용</label>
+              <textarea class="form-control" id="content" name="content" rows="5" placeholder="내용을 작성해주세요."></textarea>
+            </div>
+            <div>
+              <label for="formFile" class="form-label mt-4">파일 선택</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+            <br>
+            <br>
+            <center>
+            <button type="submit" class="btn btn-lg btn-primary">글 등록하기</button>
+            <button type="reset" class="btn btn-lg btn-primary">글 작성 취소하기</button>
+            </center>
+          </fieldset>
+
+    </form>
+
+    <script>
+        function validateForm() {
+            var title = document.getElementById("title").value;
+            var email = document.getElementById("email").value;
+            var content = document.getElementById("content").value;
+
+            // 조건 1: 3개 입력 상자가 모두 빈 문자열이 아닌지 확인
+            if (title.trim() === "" || email.trim() === "" || content.trim() === "") {
+                alert("모든 필드를 입력해주세요.");
+                return false;
+            }
+
+            // 조건 2: 이메일 형식에 맞는지 확인
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("올바른 이메일 주소를 입력해주세요.");
+                return false;
+            }
+
+            // 모든 조건이 충족되면 폼 제출
+            return true;
+        }
+    </script>
+</body>
+</html>

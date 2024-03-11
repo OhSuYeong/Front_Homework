@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        //객체를 생성: {}, 생성자함수패턴, class
+        //window.Player()
+        function Player(){
+            this.x=100;
+            this.y=200;
+            this.myShape='Player';
+
+            this.display=function(){
+                alert(`x=${this.x}`);
+            };
+        };
+
+        Player();   //함수로써 호출해서 사용하는 문법
+
+        var pobj = new Player();
+        pobj.display();
+    </script>
+</head>
+<body>
+    <h1><center>배고파</center></h1>
+</body>
+</html>

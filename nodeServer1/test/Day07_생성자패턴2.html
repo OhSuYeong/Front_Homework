@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function Player(){
+            this.x=100;
+            this.y=200;
+            this.myShape='Player';
+        }
+
+        Player.prototype.display=function(){
+            alert(`${this.myShape}:${this.x},${this.y}`);
+        };
+
+        Player.prototype.moveLeft=function(){
+            this.x=this.x-10;
+            this.display();
+        };
+
+        Player.prototype.moveRight=function(){
+            this.x=this.x+10;
+            this.display();
+        };
+
+        pobj = new Player();
+        pobj2 = new Player();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
